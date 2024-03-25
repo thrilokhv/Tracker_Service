@@ -19,8 +19,8 @@ public class TrackerServiceController {
 
     private final PetDetailsService petDetailsService;
 
-    private static final String GET_PET_DETAILS = "v1/tracker/petDetails/{ownerId}";
-    private static final String GET_PETS_OUTSIDE_POWER_SAVING = "v1/tracker/petsOutsideZone";
+    private static final String GET_PET_DETAILS = "v1/tracker/pet-details/{ownerId}";
+    private static final String GET_PETS_OUTSIDE_POWER_SAVING = "v1/tracker/pets-outside-zone";
 
     @GetMapping(GET_PET_DETAILS)
     public ResponseEntity<PetModel> getPetDetailsByOwnerId(@PathVariable(value = "ownerId") Integer ownerId) {

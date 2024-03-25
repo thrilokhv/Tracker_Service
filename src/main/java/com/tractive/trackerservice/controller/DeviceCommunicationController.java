@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 public class DeviceCommunicationController {
 
-    private static final String DEVICE_PET_DETAILS = "v1/tracker/petDetails";
+    private static final String DEVICE_PET_DETAILS = "v1/tracker/pet-details";
     private final PetDetailsService petDetailsService;
 
     @PostMapping(DEVICE_PET_DETAILS)

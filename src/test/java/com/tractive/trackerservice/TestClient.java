@@ -24,17 +24,17 @@ public class TestClient {
         return headers;
     }
     public ResponseEntity<Void> getPetDetailsFromDevice(PetDetails petDetails) {
-        return restTemplate.exchange("/v1/tracker/petDetails", HttpMethod.POST,
+        return restTemplate.exchange("/v1/tracker/pet-details", HttpMethod.POST,
                 new HttpEntity<>(petDetails, createHeaders()), Void.class);
     }
 
     public ResponseEntity<PetModel> getPetDetailsByOwnerId(Integer ownerId) {
-        return restTemplate.exchange("/v1/tracker/petDetails/"+ownerId, HttpMethod.GET,
+        return restTemplate.exchange("/v1/tracker/pet-details/"+ownerId, HttpMethod.GET,
                 new HttpEntity<>(createHeaders()), PetModel.class);
     }
 
     public List<PetsOutSideZoneDetails> getPetsOutsideOfPowerSavingMode() {
-        ResponseEntity<List> response = restTemplate.exchange("/v1/tracker/petsOutsideZone", HttpMethod.GET,
+        ResponseEntity<List> response = restTemplate.exchange("/v1/tracker/pets-outside-zone", HttpMethod.GET,
                 new HttpEntity<>(createHeaders()), List.class);
         return response.getBody();
     }
