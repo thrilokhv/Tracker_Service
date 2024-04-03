@@ -10,6 +10,5 @@ public interface PetDetailsService {
 
     void savePetDetails(PetDetails petDetails);
     PetModel getPetDetailsForOwnerId(Integer ownerId);
-
     List<PetsOutSideZoneDetails> getPetsOutSideOfPowerSavingZone();
 }
