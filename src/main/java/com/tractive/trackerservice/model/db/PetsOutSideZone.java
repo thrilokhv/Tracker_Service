@@ -1,9 +1,7 @@
 package com.tractive.trackerservice.model.db;
 
-import com.tractive.trackerservice.dto.PetType;
-import com.tractive.trackerservice.dto.TrackerType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.tractive.trackerservice.model.PetType;
+import com.tractive.trackerservice.model.TrackerType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

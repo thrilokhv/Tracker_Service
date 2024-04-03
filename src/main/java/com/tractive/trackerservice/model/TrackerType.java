@@ -1,4 +1,4 @@
-package com.tractive.trackerservice.dto;
+package com.tractive.trackerservice.model;
 
 import lombok.*;
 

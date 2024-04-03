@@ -1,6 +1,6 @@
 package com.tractive.trackerservice;
 
-import com.tractive.trackerservice.dto.*;
+import com.tractive.trackerservice.model.*;
 import com.tractive.trackerservice.jpa.repository.PetDetailsRepository;
 import com.tractive.trackerservice.model.db.PetModel;
 import org.junit.jupiter.api.AfterEach;

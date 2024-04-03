@@ -1,6 +1,6 @@
 package com.tractive.trackerservice.controller;
 
-import com.tractive.trackerservice.dto.PetsOutSideZoneDetails;
+import com.tractive.trackerservice.model.PetsOutSideZoneDetails;
 import com.tractive.trackerservice.model.db.PetModel;
 import com.tractive.trackerservice.service.PetDetailsService;
 import lombok.AllArgsConstructor;

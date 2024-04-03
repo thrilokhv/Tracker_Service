@@ -1,7 +1,7 @@
 package com.tractive.trackerservice.service;
 
-import com.tractive.trackerservice.dto.PetDetails;
-import com.tractive.trackerservice.dto.PetsOutSideZoneDetails;
+import com.tractive.trackerservice.model.PetDetails;
+import com.tractive.trackerservice.model.PetsOutSideZoneDetails;
 import com.tractive.trackerservice.model.db.PetModel;
 
 import java.util.List;

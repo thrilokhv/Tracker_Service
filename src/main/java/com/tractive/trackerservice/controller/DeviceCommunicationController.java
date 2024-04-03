@@ -1,7 +1,6 @@
 package com.tractive.trackerservice.controller;
 
-import com.tractive.trackerservice.dto.PetDetails;
-import com.tractive.trackerservice.jpa.repository.PetDetailsRepository;
+import com.tractive.trackerservice.model.PetDetails;
 import com.tractive.trackerservice.service.PetDetailsService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

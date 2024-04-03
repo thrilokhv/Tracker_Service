@@ -1,4 +1,4 @@
-package com.tractive.trackerservice.dto;
+package com.tractive.trackerservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,11 +9,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Data
-public class PetDetails {
+public class PetsOutSideZoneDetails {
 
-    private Integer ownerId;
     private PetType petType;
     private TrackerType trackerType;
-    private Boolean inZone;
-    private Boolean lostTracker;
+    private Long count;
+
 }
