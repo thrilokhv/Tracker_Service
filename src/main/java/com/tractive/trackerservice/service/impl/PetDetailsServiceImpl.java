@@ -1,5 +1,6 @@
 package com.tractive.trackerservice.service.impl;
 
+import com.tractive.trackerservice.client.ExternalClient;
 import com.tractive.trackerservice.model.PetDetails;
 import com.tractive.trackerservice.model.PetsOutSideZoneDetails;
 import com.tractive.trackerservice.exception.ResourceNotFoundException;
@@ -9,6 +10,8 @@ import com.tractive.trackerservice.model.db.PetsOutSideZone;
 import com.tractive.trackerservice.service.PetDetailsService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -20,6 +23,9 @@ import java.util.Optional;
 public class PetDetailsServiceImpl implements PetDetailsService {
 
     private PetDetailsRepository petDetailsRepository;
+
+    private ExternalClient externalClient;
+
     @Override
     public void savePetDetails(PetDetails petDetails) {
 
@@ -45,11 +51,11 @@ public class PetDetailsServiceImpl implements PetDetailsService {
         Optional<List<PetsOutSideZone>> inZoneResponse = petDetailsRepository
                 .findPetsOutsidePowerSavingZoneGroupedByPetTypeAndTrackerType();
 
-        if(inZoneResponse.isPresent()) {
+        if (inZoneResponse.isPresent()) {
             return inZoneResponse.get()
                     .stream().map(this::getPetsOutSideDetails).toList();
         } else {
-             throw new ResourceNotFoundException("No Pets found Outside of Power Saving Zone");
+            throw new ResourceNotFoundException("No Pets found Outside of Power Saving Zone");
         }
     }
 
@@ -57,6 +63,20 @@ public class PetDetailsServiceImpl implements PetDetailsService {
 
         return PetsOutSideZoneDetails.builder().petType(petsOutSideZone.getPetType())
                 .trackerType(petsOutSideZone.getTrackerType()).count(petsOutSideZone.getCount()).build();
+
+    }
+
+    public Object[] doSomething() {
+
+        ResponseEntity<Object[]> response = externalClient.doSomething(5);
+
+        Object[] responseBody = Optional.ofNullable(response)
+                .filter(ref -> ref.getStatusCode()
+                        .is2xxSuccessful())
+                .map(HttpEntity::getBody)
+                .orElseThrow(() -> new ResourceNotFoundException("something"));
+
+        return responseBody;
 
     }
 }
